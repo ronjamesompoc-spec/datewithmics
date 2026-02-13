@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Date Choice ❤️</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial;
+    text-align:center;
+    color:white;
+    background: linear-gradient(-45deg,#ff9a9e,#fecfef,#ffdde1,#ee9ca7);
+    background-size:400% 400%;
+    animation:bg 10s ease infinite;
+}
+
+@keyframes bg{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+img{
+    width:200px;
+    border-radius:20px;
+    margin:10px;
+}
+
+button{
+
+    display:block;
+    margin:20px auto;
+    padding:15px 40px;
+    font-size:20px;
+    border:none;
+    border-radius:12px;
+    background:#ff3366;
+    color:white;
+    cursor:pointer;
+}
+
+</style>
+</head>
+<body>
+
+<audio autoplay loop>
+<source src="music.mp3">
+</audio>
+
+<h1>Mics ❤️ Choose our date place</h1>
+
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+
+<button onclick="choose('Vikings Luxury Buffet')">
+Vikings Luxury Buffet 🍽️
+</button>
+
+<button onclick="choose('Jollibee Date')">
+Jollibee Date 🍗
+</button>
+
+<button onclick="choose('Starbucks Coffee Date')">
+Starbucks Coffee Date ☕
+</button>
+
+<h2 id="result"></h2>
+
+<script>
+
+function choose(place){
+
+document.getElementById("result").innerHTML=
+"Perfect Mics ❤️ Ronin will take you to "+place+" 💕";
+
+send(place);
+
+}
+
+function send(place){
+
+let phone="639560316334";
+
+let text="Mics chose: "+place+" ❤️ - Ronin";
+
+let url="https://wa.me/"+phone+"?text="+encodeURIComponent(text);
+
+setTimeout(()=>{
+window.open(url);
+},1500);
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For Mics ❤️</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial;
+    text-align:center;
+    color:white;
+    overflow:hidden;
+    background: linear-gradient(-45deg,#ff9a9e,#fecfef,#ffdde1,#ee9ca7);
+    background-size:400% 400%;
+    animation:bg 10s ease infinite;
+}
+
+@keyframes bg{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.container{
+    margin-top:50px;
+}
+
+img{
+    width:200px;
+    border-radius:20px;
+    margin:10px;
+    box-shadow:0 0 20px rgba(0,0,0,0.3);
+}
+
+button{
+    padding:15px 35px;
+    font-size:20px;
+    margin:20px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+#yes{
+    background:#ff3366;
+    color:white;
+}
+
+#no{
+    background:gray;
+    color:white;
+    position:absolute;
+}
+
+.heart{
+    position:absolute;
+    font-size:20px;
+    animation: float 5s linear infinite;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-10vh);
+        opacity:0;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<audio autoplay loop muted>
+<source src="music1.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+
+<h1>Hi Micsssssssss ❤️</h1>
+
+<h2>From Ronin, with love 💕</h2>
+
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+
+<h2>Mics, will you be my Valentine? 💖</h2>
+
+<button id="yes" onclick="yesClick()">YES ❤️</button>
+<button id="no" onmouseover="moveNo()">NO 😢</button>
+
+<h2 id="msg"></h2>
+
+</div>
+
+<script>
+
+function yesClick(){
+
+document.getElementById("msg").innerHTML=
+"yaaaayyyy  ❤️ Let's choose our date 💕";
+
+setTimeout(()=>{
+window.location="date.html";
+},2000);
+
+}
+
+function moveNo(){
+
+let x=Math.random()*window.innerWidth*0.8;
+let y=Math.random()*window.innerHeight*0.8;
+
+let btn=document.getElementById("no");
+
+btn.style.left=x+"px";
+btn.style.top=y+"px";
+
+}
+
+function heart(){
+
+let h=document.createElement("div");
+
+h.innerHTML="❤️";
+
+h.className="heart";
+
+h.style.left=Math.random()*100+"vw";
+
+h.style.fontSize=(Math.random()*25+10)+"px";
+
+document.body.appendChild(h);
+
+setTimeout(()=>h.remove(),5000);
+
+}
+
+setInterval(heart,300);
+
+</script>
+
+</body>
+</html>
